@@ -28,7 +28,9 @@ function App() {
         <ListRender />
         <ConditionalRender />
         <ShowUserName name="Miguel" idade={idade} userName={userName} />
-        <CarDetails brand="VW" km={10000} color="Azul" />
+        <CarDetails brand="VW" km={10000} color="Azul" newCar={false} />
+        <CarDetails brand="Ford" km={0} color="Azul" newCar={true} />
+        <CarDetails brand="Fiat" km={4500} color="Azul" newCar={false} />
       </div>
     </div>
   );
