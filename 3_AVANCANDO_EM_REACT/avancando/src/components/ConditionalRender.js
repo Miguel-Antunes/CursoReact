@@ -8,11 +8,23 @@ const ConditionalRender = () => {
     const [name, setName] = useState("Maria");
 
     return (
-        <div>
-            <h1>Isso será exibido?</h1>
+        <div style={{ marginTop: "50px" }}>
+
+            <div>
+                <hr />
+
+            </div>
+            <div>
+                <b>
+                    <h1>
+                        ConditionalRender
+                    </h1>
+                </b>
+            </div>
+            <h3>Isso será exibido?</h3>
             {x && <p>Se x for true, sim! </p>}
             {!x && <p>Agora x é falso </p>}
-            <h1>If Ternario</h1>
+            <h3>If Ternario</h3>
             {name === "João" ? (
                 <div>
                     <p>
@@ -26,7 +38,8 @@ const ConditionalRender = () => {
                     </p>
                 </div>
             )}
-            <button onClick={()=> setName("João")}>
+
+            <button onClick={() => setName("João")}>
                 Click-me
             </button>
         </div>

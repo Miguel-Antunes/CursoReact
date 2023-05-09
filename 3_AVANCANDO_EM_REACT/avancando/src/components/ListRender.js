@@ -3,26 +3,38 @@ const ListRender = () => {
     const [list] = useState(["Matheus", "Pedro", "Josias"]);
 
     const [users, setUsers] = useState([
-        {id: 1, name: "Matheus", age: 31},
-        {id: 2, name: "João", age: 28},
-        {id: 3, name: "Pedro", age: 44}
+        { id: 1, name: "Matheus", age: 31 },
+        { id: 2, name: "João", age: 28 },
+        { id: 3, name: "Pedro", age: 44 }
     ])
     const deleteRandom = () => {
         const randomNumber = Math.floor(Math.random() * 4);
         setUsers((prevUsers) => {
-            return prevUsers.filter((user)=> randomNumber !== user.id)
+            return prevUsers.filter((user) => randomNumber !== user.id)
         })
     }
     console.log(users)
     return (
-        <div>
+        <div style={{ marginTop: "50px" }}>
+            <div>
+                <hr />
+
+            </div>
+            <div>
+                <b>
+                    <h1>
+                        ListRender
+                    </h1>
+
+                </b>
+            </div>
             <ul>
-                {list.map((item, index)=> (
+                {list.map((item, index) => (
                     <li key={index}>{item}</li>
                 ))}
             </ul>
             <ul>
-                {users.map((item)=> (
+                {users.map((item) => (
                     <li key={item.id}>{item.name} - {item.age}</li>
                 ))}
             </ul>
