@@ -8,6 +8,7 @@ import ManageData from './components/ManageData';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
 import Fragment from './components/Fragment';
+import Container from './components/Container';
 
 function App() {
 
@@ -50,6 +51,11 @@ function App() {
 
 
         <Fragment />
+        <Container>
+          <p>
+            Este é o conteúdo
+          </p>
+        </Container>
       </div>
 
     </div>
