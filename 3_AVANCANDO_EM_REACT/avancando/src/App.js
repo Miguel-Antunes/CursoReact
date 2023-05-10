@@ -10,6 +10,8 @@ import CarDetails from './components/CarDetails';
 import Fragment from './components/Fragment';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
 
@@ -22,6 +24,11 @@ function App() {
     { id: 3, brand: "Renault", color: "Azul", newCar: false, km: 234 }
 
   ]
+  const [message, sertMessage] = useState("");
+  const handleMessage = (msg) => {
+    sertMessage(msg);
+  }
+
   function showMessage() {
     console.log("Evento do componente pai")
   }
@@ -29,9 +36,13 @@ function App() {
   return (
     <div className="App">
       <h1>Avançando em React</h1>
+
+      {/*imagem em public */}
       <div>
         <img src="./img1.jpg" alt="Paisagem" />
       </div>
+
+      {/*imagem em assets */}
       <div>
         <img src={City} alt="Cidade" />
       </div>
@@ -40,11 +51,18 @@ function App() {
         <ManageData />
         <ListRender />
         <ConditionalRender />
+
+        {/*props */}
         <ShowUserName name="Miguel" idade={idade} userName={userName} />
+
+        {/*destruturing*/}
         <CarDetails brand="VW" km={10000} color="Azul" newCar={false} />
+
+        {/*reaproveitando*/}
         <CarDetails brand="Ford" km={0} color="Azul" newCar={true} />
         <CarDetails brand="Fiat" km={4500} color="Azul" newCar={false} />
 
+        {/*loop em Array de objetos*/}
         {cars.map(
           (car) => (
             <CarDetails
@@ -55,14 +73,22 @@ function App() {
               newCar={car.newCar} />)
         )}
 
-
+        {/*Fragment*/}
         <Fragment />
+
+        {/*Children*/}
         <Container>
           <p>
             Este é o conteúdo
           </p>
         </Container>
+
+        {/*Executar Função*/}
         <ExecuteFunction myFunction={showMessage} />
+
+        {/*State lift*/}
+        <Message msg={message} />
+        <ChangeMessageState handleMessage={handleMessage} />
       </div>
 
     </div>
